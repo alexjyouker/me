@@ -1,34 +1,637 @@
-<html>
-    <style>
-        html, body, div {
-            height: 100%;
-            width:100%;
-            overflow: hidden;
-        }
 
-       #background {
-            position: absolute;
-            top: 0;
-            left: 0;            
-            background-image: url(./img/sky.jpg);
-            background-size: cover;
-       }
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>Alex Youker</title>      
+      <link rel="stylesheet" href="https://unpkg.com/bulma@0.8.0/css/bulma.min.css" />
+      
+      <style>
+      @import url("https://fonts.googleapis.com/css?family=Lato|Poppins|Calistoga");
+    .has-vertically-aligned-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
 
-       #content {
-            position: absolute;
-            font-family: sans-serif;
-            font-size: 5em;
-            font-weight: 400;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-       }
+    * {
+      box-sizing: border-box;
+    }
+
+    .progress {
+      background: #ccc
+      border: 1px solid #aaa;
+      box-shadow: 0px 1px 1px #aaa;
+    }
+    html {
+      font-family: 'Poppins', Lato, Tahoma, sans-serif;
+      width: 100%;
+      min-height: 100%;
+    }
+
+    ul {
+      padding: 1em;
+      list-style: circle;
+      padding-left: 2em;
+      padding-right: 2em;
+    }
+
+    .header-wrapper {
+      padding-bottom: 30px;
+    }
+
+    .hero {
+      background-image: url(./img/mn.jpg);
+      background: linear-gradient(rgba(31, 44, 108, 0.65), rgba(31, 44, 108, 0.65)), rgba(0, 0, 0, 0.55) url("./img/mn.jpg") no-repeat;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      height:100%;
+      background-origin: content-box;
+      color: white;
+      box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .hero.is-large {
+      background-size: cover;
+    }
+
+    .hero .title {
+      font-family: 'Calistoga', sans-serif;  
+      font-size: 5rem;
+      color: whitesmoke;
+    }
+
+    .hero .subtitle {
+      padding: 5px;
+      color: whitesmoke;
+    }
+
+    .hero .profession {
+      padding-top: 50px;
+      font-size: 1.7rem;
+      text-transform: uppercase;
+    }
+
+    .hero .hero-head {
+      height: 50px;
+      background:transparent;  
+    }
+
+    .hero .hero-head .hero-head--wrapper {
+      margin: 7px auto;
+      height: 50px;
+    }
+
+    .hero .hero-head .hero-head--wrapper .hero-menu-desktop {
+      line-height: 38px;
+      font-weight: 600;
+      text-transform: lowercase;
+      letter-spacing: 1px;
+      font-size: 1rem;
+    }
+
+    .hero .hero-head .hero-head--wrapper .hero-menu-desktop ul li {
+      display: inline-block;
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+
+    .hero .hero-head .hero-head--wrapper .hero-menu-desktop ul li.is-active a {
+      border-bottom: 2px solid white;
+    }
+
+    .hero .hero-head .hero-head--wrapper .hero-menu-desktop ul li a {
+      color: white;
+    }
+
+    .hero .hero-head .hero-head--wrapper .hero-menu-desktop ul li a:hover {
+      color: white;
+      transition: all .2s ease-in-out;
+      border-bottom: 2px solid white;
+    }
+
+
+    .skills {
+      padding: 100px;    
+    }
+
+    .skills h1 {
+      padding: 10px;
+    }   
+
+    .subtitle {
+      color: #333;
+    }
+
+    .category.subtitle {
+      color: #294e75;
+    }
+
+    .section-title {
+      color: #294e75;  
+      letter-spacing: 2px;
+      padding-bottom: 30px;
+    }
+
+    .fa-download {
+      color: #43485c;
+    }
+
+    .main-content {
+      padding-top: 2rem;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .section-dark {
+      background-color: #f0f3f5;    
+    }
+
+    .resume {
+      min-height: 400px;
+      padding-top: 100px;
+    }
+
+    .section-dark.resume .title {
+      padding: 20px;
+    }
+
+    .section-dark.resume .button {
+      border: 2px solid #43485c;
+      background: white;
+      color: #294e75;
+      height: 50px;
+      width: 250px;
+      font-size: 1rem;
+      text-transform: uppercase;
+      margin-top: 1em;
+    }
+
+    .section-dark.resume .fa-download {
+      color: #294e75;
+    }  
+
+    .section-light {
+      padding: 30px;
+    }
+
+    .info {
+      padding-left: 0.5em;
+      padding-right: 0.5em;
+      padding-top: 2em;
+    }
+
+    .section-light.about-me {
+      padding-bottom: 100px;
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+    }
+
+    .section-light.contact {
+      padding: 200px;
+    }
+
+    .section-light.contact button {
+      width: 100%;
+      background-color: #43485c;
+      color: white;
+      height: 50px;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .columns.is-vcentered.is-multiline {
+      margin-top: 2em;
+    }
+
+    #education .section-title {
+      margin-top: 1em;
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+      background-color: rgba(245, 245, 245, 0);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      background-color: #43485c;
+    }
+
+    .white {
+      color:ghostwhite;
+    }
+
+    @media (max-width: 599px) {
+      .main-content .section-light.about-me .about-links {
+        text-align: center;
+      }
+
+      .main-content .skills {
+        padding: 50px 20px 40px 20px;
+        padding-bottom: 20px;
+      }
+
+      .main-content .section-light.contact {
+        padding: 60px 20px;
+      }
+
+      .hero .is-large {
+        background-size: cover!important;
+        background-attachment: scroll!important;
+      }
+
+      .hero .hero-head {
+        display: none;
+      }
+
+      .hero {
+        background-size: unset!important;
+        background-position: center center!important;
+        background-attachment: scroll;
+        background-repeat: no-repeat!important;
+      }
+
+      .main-content .section-dark.resume {
+        padding-top: 75px;
+      }
+
+      .main-content .section-dark.resume .contact-info {      
+        text-align: center;
+        margin-bottom: 2em;
+        margin-top: 2em;
+      }
+
+      .main-content .section-dark.resume .contact-info h2 {
+        padding-left:1em;
+        padding-right:1em;
+      }
+    }
     </style>
-    <body>
-    <div id="background"></div>
-    <div id="content">
-        <p>Coming soon...</p>
+    <script
+      src="https://kit.fontawesome.com/2828f7885a.js"
+      integrity="sha384-WAsFbnLEQcpCk8lM1UTWesAf5rGTCvb2Y+8LvyjAAcxK1c3s5c0L+SYOgxvc6PWG"
+      crossorigin="anonymous"
+    ></script>      
+  </head>
+  <body>            
+    <div class="header-wrapper" id="home">        
+        <section class="hero is-large">
+          <div class="hero-head">
+            <div class="hero-head--wrapper">
+              <div class="columns">
+                <div class="column is-12 hero-menu-desktop has-text-right">
+                  <ul>
+                    <li class="is-active">
+                      <a href="#home">Home</a>
+                    </li>
+                    <li>
+                      <a href="#about-me">About Me</a>
+                    </li>
+                    <li>
+                      <a href="#skills">Skills</a>
+                    </li>                  
+                    <li>
+                      <a href="#experience">Experience</a>
+                    </li>                  
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-body">
+            <div class="container has-text-centered">
+              <h1 class="subtitle">Hello! My name is</h1>
+              <h2 class="title">Alex Youker</h2>
+              <h1 class="subtitle profession">A fullstack developer from Northern MN</h1>
+              <h1 class="subtitle" style="font-size:1em">(but front end development is my specialty 🙂)</h1>
+            </div>
+          </div>
+        </section>        
+    </div>      
+    <div class="main-content">        
+        <div class="section-light about-me" id="about-me">
+          <div class="container">
+            <div class="column is-12 about-me">
+              <h1 class="title has-text-centered section-title">About Me</h1>
+            </div>
+            <div>
+              <div
+                class="has-vertically-aligned-content"
+                data-aos="fade-right"
+              >
+                <p>                
+                    I am a full stack engineer with 9 years of experience delivering 
+                    highly reliable and scalable applications to customers in mission critical roles. 
+                    I am comfortable developing systems at all 
+                    levels of the software stack, but my true passion is front end 
+                    engineering in React/React Native.
+                </p>
+                <br />
+                <br/>
+                <p style="margin-top:1em">
+                  Currently, I am working as the lead architect (Staff Software Engineer) on an "offline first" web application 
+                  that is used by Emergency Medical Services teams across the United States to document the care of their patients. 
+                </p>
+                <br />
+                <div class="is-divider"></div>            
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        <!-- End Services Content -->
+        <!-- Begin Skills Content -->
+        <div class="section-dark skills" id="skills">
+          <div class="container">
+            <div class="columns is-multiline">
+              <div class="column is-12 about-me">
+                <h1 class="title has-text-centered section-title">Skills</h1>
+              </div>
+              <div
+                class="column is-6"
+                data-aos="fade-in"
+                data-aos-easing="linear"
+              >
+                <h1 class="title is-3 has-text-centered-mobile">Front end</h1>
+                <h1>React</h1>
+                <progress class="progress is-primary" value="90" max="100"></progress>
+                <h1>React Native</h1>
+                <progress class="progress is-primary" value="85" max="100"></progress>
+                <h1>SASS</h1>
+                <progress class="progress is-primary" value="70" max="100"></progress>
+                <h1>Javascript (ES6)</h1>
+                <progress class="progress is-primary" value="95" max="100"></progress>
+
+                <h1 class="title is-6">Other frameworks/tools I have experience with:</h1>
+                <p>Redux</p>
+                <p>IndexedDB</p>
+                <p>WebSQL</p>
+                <p>Backbone</p>
+                <p>KnockoutJS</p>
+                <p>jQuery</p>
+                <p>Bootstrap</p>
+                <p>Bulma CSS ❤️</p>
+                <p>...and many more</p>                
+              </div>
+              <div
+                class="column is-6"
+                data-aos="fade-in"
+                data-aos-easing="linear"
+              >
+                <h1 class="title is-3 has-text-centered-mobile">Back end</h1>
+                <h1>C#/.NET</p>
+                <progress class="progress is-primary" value="85" max="100"></progress>
+                <h1>Java/Spring</h1>
+                <progress class="progress is-primary" value="90" max="100"></progress>
+                <h1>NodeJS/Express ❤️</h1>
+                <progress class="progress is-primary" value="95" max="100"></progress>
+                <h1>PHP (it has been a while)</h1>
+                <progress class="progress is-primary" value="50" max="100"></progress>
+              </div>
+              <div
+                class="column is-6"
+                data-aos="fade-in"
+                data-aos-easing="linear"
+              >
+                <h1 class="title is-3 has-text-centered-mobile">Databases</h1>
+                <h1>SQL Server</h1>
+                <progress class="progress is-primary" value="90" max="100"></progress>
+                <h1>Oracle</h1>
+                <progress class="progress is-primary" value="80" max="100"></progress>
+                <h1>Postgres</h1>
+                <progress class="progress is-primary" value="70" max="100"></progress>
+                <h1>MongoDB</h1>
+                <progress class="progress is-primary" value="80" max="100"></progress>
+              </div>
+              <div
+                class="column is-6"
+                data-aos="fade-in"
+                data-aos-easing="linear"
+              >
+                <h1 class="title is-3 has-text-centered-mobile">Leadership</h1>
+                <h1>Driving technical direction</h1>
+                <progress class="progress is-primary" value="90" max="100"></progress>
+                <h1>Teaching/Mentoring</h1>
+                <progress class="progress is-primary" value="80" max="100"></progress>
+                <h1>Agile project management methodologies</h1>
+                <progress class="progress is-primary" value="75" max="100"></progress>
+                <h1>Creating a culture of craftsmanship</h1>
+                <progress class="progress is-primary" value="90" max="100"></progress>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section section-light experience" id="experience">
+          <h1 class="title has-text-centered section-title">Experience</h1>
+          <div class="container">            
+          <div class="columns is-vcentered is-multiline">
+            <div class="column is-4">
+              <h1 class="subtitle is-3 has-text-centered">Stryker / Physio-Control </h1>
+            </div>
+            <div class="column is-4">
+              <h1 class="subtitle is-5 has-text-centered">Staff Software Engingeer</h1>
+            </div>
+            <div class="column is-4">
+              <h1 class="subtitle is-5 has-text-centered">2013-Current</h1>
+            </div>
+          </div>    
+          <h2 class="info has-text-weight-light">
+            From October 2014 until now, I have been working on an offline capable, React JS based web app that is used by 
+            Emergency Medical Services teams to  document their patient care in realtime. For the first two years, 
+            my manager and I were the only 2 developers on this project. So, I had the opportunity to oversee a great deal 
+            of the architectural decisions made within the system, as well as to help to train and onboard 
+            the rest of the team as we brought them on over time. Today the app has been scaled to serve all of our EMS customers in the field, 
+            including Fire/EMS teams for some of the largest metro areas in the country.  
+          </h2>
+          <br/>
+          <h2 class="category subtitle has-text-weight-bold">
+            Technologies used:
+          </h2>
+            <ul class="has-text-weight-light">
+              <li>
+                React (early adopters)
+              </li>
+              <li>Java/Spring</li>
+              <li>SQL Server</li>
+              <li>Oracle</li>
+              <li>NodeJS</li>
+              <li>Express</li>
+              <li>MongoDB</li>
+              <li>SASS</li>
+              <li>Cefsharp</li>
+              <li>React Native</li>
+            </ul>
+            <h2 class="category subtitle has-text-weight-bold">
+              Accomplishments:
+            </h2>
+            <ul class="has-text-weight-light">
+              <li>
+                Designed and implemented much of the base layout and form controls components that are used in the app today
+              </li>
+              <li>
+                Helped to create a CQRS based system similar to what someone might use PouchDB for today. High reliability and data integrity 
+                is of paramount importance to our customers so choosing the right architecture was incredibly important. This system allow 
+                for syncing user generated changes to the server to obtain eventual consistency with the server in a usage context where
+                internet connections are constantly ranging from spotty to non-existent.</li>
+              <li>Worked on a system to store large amounts of user data (potentially HIPAA protected information) in a secure way in IndexedDB.</li>
+              <li>
+                Implemented a Patient Matching system to allow data to be imported in to a form if the patient has already used the 
+                ambulance service in the past.
+              </li>
+              <li>
+                Implemented a system to allow the user to fax a report containing all of the information they have documented about a patient 
+                from the app so it can be sent to the destination hospital.
+              </li>
+              <li>
+                Worked on other systems and applications to further integrate our users with their most common destination hospitals.
+              </li>
+              <li>
+                Implemented a system to allow agencies to create fields, groups and sections of various form controls and append them to our standard form. 
+                These fields are highly configurable and may include custom validations and behaviors based on user input. 
+                This feature helped us to solidifying a number of large contracts this past year. 
+              </li>
+              <li>Integrated our system with a realtime patient tracking/mass casualty tracking system for a large metro area.</li>
+            </ul>      
+            <h2 class="info has-text-weight-light">
+              From the beginning of my tenure until October 2014, I worked on an offline capable mobile web app that allowed
+              home health care nurses to document home health visits. 
+            </h2>
+            <br/>
+          <h2 class="category subtitle has-text-weight-bold">
+            Technologies used:
+          </h2>
+          <ul class="has-text-weight-light">
+            <li>Backbone.JS</li>
+            <li>jQuery</li>
+            <li>LESS</li>
+            <li>ASP.NET MVC 3</li>
+            <li>SQL Server</li>          
+          </ul>
+          <br/>
+          <h2 class="category subtitle has-text-weight-bold">
+            Accomplishments:
+          </h2>
+          <ul class="has-text-weight-light">
+            <li>
+              Wrote code to efficiently store large sets of reference data (ICD-10 codes and medication lists) in IndexedDB to allow offline use 
+              of the application. At the time, device hardware in a BYOD user base could be extremely poor which made this a fairly complex task.
+            </li>
+            <li>
+              Created many of the base form and layout controls used in the application, which are still used today.  
+            </li>
+            <li>
+              Created a system to allow configurable, input driven 'behaviors' and validations for various nursing forms. This allowed us
+              to help meet customer / perspective customer demands while still adhering to OASIS standards.
+            </li>
+            <li>
+              Added patient chart/history functionality to the application along with the ability to import patient information form their chart in to a nursing form.
+            </li>
+            <li>
+              Adapted the design of the application to be fully responsive and support the use of smart phones by nurses in the field.
+            </li>
+          </ul>
+          
+            
+          </h2>          
+          <div class="columns is-vcentered is-multiline">
+            <div class="column is-4">
+              <h1 class="subtitle is-3 has-text-centered">Allete</h1>
+            </div>
+            <div class="column is-4">
+              <h1 class="subtitle is-5 has-text-centered">Programmer / Analyst </h1>
+            </div>
+            <div class="column is-4">
+              <h1 class="subtitle is-5 has-text-centered">2011-2013</h1>
+            </div>
+          </div>
+          <h2 class="info has-text-weight-light">
+            I worked as a Programmer/Analyst at Allete where I was a member of the SCADA System Support
+            team from 2011-2013. The team was responsible for the technology and software needed to 
+            monitor and operate the energy grid. 
+          </h2>
+          <br/>
+          <h2 class="category subtitle has-text-weight-bold">
+            Technologies used:
+          </h2>          
+            <ul class="has-text-weight-light">
+              <li>Java</li>
+              <li>jQuery</li>
+              <li>Oracle PL/SQL</li>
+              <li>Some ASP.NET</li>
+            </ul>          
+          <br/>
+          <h2 class="category subtitle has-text-weight-bold">
+            Accomplishments:
+          </h2>          
+          <ul class="has-text-weight-light">
+            <li>
+              Worked on a realtime web interface to monitor events from RTUs and other SCADA system
+              devices used to render a Data Acquisition and Control log.
+            </li>
+            <li>
+              Maintained a project to monitor and assess historical backups of critical cyber assets
+              maintained by the EMS group using Netbackup.
+            </li>
+            <li>
+              Involved in building/deploying system images, documentation, vetting, and de-activation/disposal 
+              of previously used machines during a major upgrade 
+              of the GE SCADA system used by the team.
+            </li>
+          </ul> 
+          </div>
+        <div class="container" id="education">          
+          <h1 class="title has-text-centered section-title">Education</h1>
+          <ul class="has-text-light-weight">
+            <li>
+              Received Bachelor of Science in Math and Computer Science 
+              from The University of Wisconsin-Superior in 2012 with a focus in Software Engineering.                  
+            </li>
+            <li>
+              Swenson Fellowship Scholar from 2008 - 2012
+            </li>
+          </ul>
+          <br />      
+        </div>
+      </div> 
+      <div class="section section-dark resume">
+        <div class="container">
+          <div            
+            data-aos="fade-in"
+            data-aos-easing="linear"
+          >       
+          <p class="has-text-centered">
+            Interesting in working with me? I would love to hear about employment opportunities
+            or to consider consulting on your React/React Native projects!
+          </p>
+          <div class="has-text-centered contact-info">            
+            <h2>Email: ayouker85@gmail.com</h2>
+            <h2>Phone: 218-269-5284 </h2>
+            <h2>LinkedIn: <a href="https://www.linkedin.com/in/alex-youker-7544a7126/">https://www.linkedin.com/in/alex-youker-7544a7126/</a></h2>
+          </div>
+          <div class="has-text-centered">
+            <a href="./resume.pdf" class="button">
+              Download Resume&emsp;<i class="fad fa-download fa-lg"></i>
+            </a>
+          </div>                                  
+          </div>
+        </div>
+      </div>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>    
+    <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        easing: "ease-out",
+        duration: 800
+      });
+    </script>
     </body>
-</html>
+  </html>
