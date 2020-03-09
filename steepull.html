@@ -1,0 +1,372 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="./css/bulma.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    html,
+    body {
+      width: 100%;
+      background: #f3f3f3;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    .hero.is-info.is-bold {
+      background: linear-gradient(120deg, #8043b8e6 0%, #5f3289 100%) !important;
+      z-index: 2;
+       !important;
+    }
+
+    .hero {
+      height: 88%;
+      position: relative;
+    }
+
+    .hero-container {
+      background: linear-gradient(120deg, #8043b8e6 0%, #5f3289 1010) !important;
+      z-index: 2 !important;
+      z-index: 2;
+      height: 100%;
+    }
+
+    .hero-container .container .column.description {
+      margin-top: 10%;
+    }
+
+    .hero-container .container .column.description p {
+      margin-top: 3em;
+    }
+
+    .hero.is-info {
+      background-color: transparent !important;
+    }
+
+    .hero-body .container {
+      max-width: 700px;
+    }
+
+    .hero-body .title {
+      color: hsl(192, 17%, 99%) !important;
+    }
+
+    .hero-body .subtitle {
+      color: hsl(192, 17%, 99%) !important;
+      padding-top: 2rem;
+      line-height: 1.5;
+    }
+
+    .navbar-brand .navbar-item {
+      font-size: 2em;
+      color: white;
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar {
+      box-shadow: none !important;
+      background: transparent;
+    }
+
+    .navbar .button {
+      background: transparent !important;
+      border: 0;
+      border-bottom: 2px solid white !important;
+      color: white !important;
+      border-radius: 0;
+    }
+
+    .navbar-menu.is-active {
+      background: transparent;
+    }
+
+    .centered-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .icon-background {
+      width: 100%;
+      height: 100%;
+      font-size: 22em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      z-index: 0;
+    }
+
+    .buttons a {
+      width: 40%;
+    }
+
+    .cta {
+      background: #feb326;
+      border: none;
+    }
+
+    .move-left {
+      position: relative;
+      left: -150px;
+    }
+
+    .move-right {
+      position: relative;
+      right: -150px;
+    }
+
+    .grey-background {
+      background: #ddddddff;
+    }
+
+    .grey-background .fa {
+      color: #92929242;
+    }
+
+    .grey-background h3 {
+      color: #333;
+      z-index: 2;
+    }
+
+    .grey-background h4.subtitle {
+      margin-top: 1em;
+      color: #8043b8;
+    }
+
+    .grey-background p {
+      color: #333;
+    }
+
+    .blue-background {
+      background: #64c5eb;
+    }
+
+    .blue-background .fa {
+      color: #4eb5de;
+    }
+
+    .blue-background h4.subtitle {
+      margin-top: 1em;
+      color: #8043b8;
+    }
+
+    @media only screen and (max-width: 768px) {
+
+      /* For mobile phones: */
+      .navbar-brand .navbar-item {
+        font-weight: normal !important;
+        font-size: 1.5em !important;
+      }
+
+
+      .section.is-large {
+        height: 200%;
+        padding-bottom: 1em !important;
+      }
+
+      .column img {
+        max-width: 115%;
+        margin-left: -5.5%;
+        position: static !important;
+        right: 0;
+      }
+
+      .hero {
+        height: 110% !important;
+      }
+
+      .icon-background i {
+        font-size: 0.9em !important;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/bulma-modal-fx/dist/css/modal-fx.min.css" />
+</head>
+
+<body>
+  <section class="hero is-info is-medium is-bold">
+    <nav class="navbar">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="../">
+            <span class="has-text-white">STEEPULL</span>
+          </a>
+        </div>
+        <div id="navbarMenu" class="navbar-menu">
+          <div class="navbar-end">
+            <span class="navbar-item">
+              <a class="button is-white">
+                <span class="icon">
+                  <i class="fa fa-pencil"></i>
+                </span>
+                <span>Signup</span>
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="hero-container">
+      <div>
+        <div class="container">
+          <div class="columns">
+            <div class="column description">
+              <h1 class="title has-text-centered">
+                Pull your church family closer together than ever before, through prayer
+              </h1>
+              <p class="buttons is-centered margin">
+                <a class="button cta is-rounded is-medium has-text-white">Sign Up</a>
+                <a class="button is-rounded is-white is-outlined is-medium" target="_self" href="#prayerChain">Learn
+                  more</a>
+                </h2>
+            </div>
+            <div class="column">
+              <img class="move-right" src="./img/screenshot.png" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="prayerChain" class="section has-text-centered grey-background">
+    <div class="icon-background">
+      <i class="fa fa-chain"></i>
+    </div>
+    <div class="container">
+      <div class="columns is-vcentered">
+        <div class="column">
+          <img src="./img/screenshot3.png" class="is-hidden-mobile move-left">
+        </div>
+        <div class="column">
+          <p class="section-heading has-text-white is-info">
+            <h3 class="title is-1 has-text-centered">
+              <span>The modern prayer chain</span>
+            </h3>
+            <img src="./img/screenshot3.png" style="display:none" class="is-block-mobile">
+            <h4 class="subtitle is-5 is-bold">The STEEPULL prayer chain is interactive, increases engagement, and
+              encourages building and solidifying relationships in your church community</h4>
+          </p>
+          <div>
+            <p>
+              Email lists, social media groups and text messages are hard to manage, require a gatekeeper and don't
+              provide a platform
+              for the church member in need of prayer to interact with their church family. STEEPULL allows anyone in
+              your church to
+              post their prayer needs and for their fellow church members to reply and indicate they are covering the
+              request in prayer.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <section id="place"
+    class="section is-large centered-content is-flex has-text-centered has-text-white info blue-background">
+    <div class="icon-background">
+      <i class="fa fa-users"></i>
+    </div>
+    <div class="container">
+      <div class="columns is-vcentered">
+        <div class="column">
+          <p class="section-heading has-text-white is-info">
+            <h3 class="title is-1 has-text-centered has-text-white">
+              <span>A safe place to share your prayer needs with your church family
+              </span>
+            </h3>
+            <img src="./img/screenshot6.png" style="display:none" class="is-block-mobile">
+            <h4 class="subtitle is-5 is-bold">STEEPULL allows you to share prayer requests with your church family,
+              other churches in your region or the general public.
+            </h4>
+          </p>
+          <div>
+            <p>
+              Some prayer requests are better kept in house, while others may be pertinent to other churches in your
+              area or even the general public.
+              STEEPULL gives you the flexibility to choose who sees your prayer requests, including sharing your public
+              posts on social media if you desire.
+              STEEPULL provides a platform where everyone in your church community can feel engaged in the prayer needs
+              within your church, but also allows you to
+              provide access to others outside of your church when it is the right fit for your prayer need.
+            </p>
+          </div>
+        </div>
+        <div class="column">
+          <img src="./img/screenshot6.png" class="is-hidden-mobile move-right">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="prayerList"
+    class="section is-large centered-content has-text-centered info is-vcentered prayerlist grey-background">
+    <div class="icon-background">
+      <i class="fa fa-list"></i>
+    </div>
+    <div class="container" style="">
+      <div class="columns is-vcentered">
+        <div class="column">
+          <img src="./img/screenshot7.png" class="is-hidden-mobile move-left">
+        </div>
+        <div class="column">
+          <p class="section-heading has-text-white is-info">
+            <h3 class="title is-1 has-text-centered">
+              <span>Add prayer requests and other church members to your daily prayer list</span>
+            </h3>
+            <img src="./img/screenshot7.png" style="display:none" class="is-block-mobile">
+            <h4 class="subtitle is-5 is-bold">STEEPULL allows you to add prayer requests and other church members to a
+              daily prayer list</h4>
+          </p>
+          <div>
+            <p>
+              We believe prayer is powerful, and that includes simply praying for a fellow church member that is on your
+              heart recently. STEEPULL
+              allows you to add both prayer requests and other church members to a prayer list and lets you log your
+              prayers each day. As with all STEEPULL
+              prayer requests, members can allow push notifications to let you know you are praying for them or their
+              prayer requests the moment you pray.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <section id="admin"
+    class="section is-large centered-content is-flex has-text-centered has-text-white info blue-background">
+    <div class="icon-background">
+      <i class="fa fa-users"></i>
+    </div>
+    <div class="container">
+      <div class="columns is-vcentered">
+        <div class="column">
+          <p class="section-heading has-text-white is-info">
+            <h3 class="title is-1 has-text-centered has-text-white">
+              <span>Easily manage users and contacts in one place</span>
+            </h3>
+            <img src="./img/screenshot2.png" style="display:none" class="is-block-mobile">
+            <h4 class="subtitle is-5 is-bold">STEEPULL allow admin users to easily manage users and contacts
+              from your.
+            </h4>
+          </p>
+          <div>
+            <p>
+              STEEPULL comes with a built in directory for regular users and admin functionality for administrative users.
+              This allows admins to to easily manage users as well as other members of your church that have not started using the app yet. 
+              You can all easily create a list of members that have not joined yet and that may need to be called or emailed about a specficic prayer request.
+            </p>
+          </div>
+        </div>
+        <div class="column">
+          <img src="./img/screenshot2.png" class="is-hidden-mobile move-right">
+        </div>
+      </div>
+    </div>
+  </section>
+  <link rel="stylesheet" type="text/css"
+    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+</body>
+
+</html>
